@@ -1,20 +1,22 @@
 {
   "version": 2,
   "name": "faceless-factory-policy",
-  "builds": [
-    {
-      "src": "*.html",
-      "use": "@vercel/static"
-    }
-  ],
   "routes": [
+    { "src": "/(tiktok.*\\.txt)", "dest": "/$1" },
     { "src": "/", "dest": "/index.html" },
     { "src": "/privacy", "dest": "/privacy.html" },
-    { "src": "/terms", "dest": "/terms.html" },
     { "src": "/privacy/", "dest": "/privacy.html" },
+    { "src": "/terms", "dest": "/terms.html" },
     { "src": "/terms/", "dest": "/terms.html" }
   ],
   "headers": [
+    {
+      "source": "/(tiktok.*\\.txt)",
+      "headers": [
+        { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
+        { "key": "Cache-Control", "value": "no-cache, no-store" }
+      ]
+    },
     {
       "source": "/(.*)",
       "headers": [
