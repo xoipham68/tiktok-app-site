@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Faceless Factory</title>
+  <meta name="description" content="Privacy Policy for Faceless Factory - AI content publishing tool. Learn how we collect, use, and protect your data." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0a0a0f; --bg2: #11111a; --bg3: #1a1a28;
+      --accent: #7c3aed; --accent2: #a855f7;
+      --text: #f1f5f9; --muted: #94a3b8; --muted2: #64748b;
+      --border: rgba(124,58,237,0.2); --radius: 12px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(20px); background: rgba(10,10,15,0.9);
+      border-bottom: 1px solid var(--border);
+      padding: 0 clamp(16px,5vw,80px);
+      display: flex; align-items: center; justify-content: space-between; height: 60px;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); font-weight: 700; font-size: 1rem; }
+    .logo-icon { width: 30px; height: 30px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 14px; }
+    .nav-links { display: flex; gap: 6px; }
+    .nav-links a { text-decoration: none; color: var(--muted); font-size: 0.85rem; padding: 6px 12px; border-radius: 8px; transition: all .2s; }
+    .nav-links a:hover { color: var(--text); background: var(--bg3); }
+    .nav-links a.active { color: var(--accent2); }
+
+    .hero-banner {
+      background: linear-gradient(135deg, rgba(124,58,237,0.15) 0%, rgba(168,85,247,0.05) 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 60px clamp(16px,5vw,80px) 50px;
+    }
+    .hero-banner .label {
+      display: inline-block; background: rgba(124,58,237,0.15); border: 1px solid var(--border);
+      color: var(--accent2); font-size: 0.72rem; font-weight: 600; letter-spacing: 1.5px;
+      text-transform: uppercase; padding: 4px 12px; border-radius: 100px; margin-bottom: 16px;
+    }
+    .hero-banner h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; letter-spacing: -1px; margin-bottom: 12px; }
+    .hero-banner p { color: var(--muted); font-size: 1rem; max-width: 600px; }
+    .effective-date {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 8px; padding: 8px 16px; font-size: 0.82rem; color: var(--muted); margin-top: 20px;
+    }
+
+    .layout {
+      display: grid; grid-template-columns: 240px 1fr; gap: 48px;
+      max-width: 1100px; margin: 0 auto; padding: 60px clamp(16px,5vw,48px);
+    }
+    @media (max-width: 768px) { .layout { grid-template-columns: 1fr; } .sidebar { display: none; } }
+
+    .sidebar { position: sticky; top: 80px; align-self: start; }
+    .sidebar-title { font-size: 0.72rem; font-weight: 700; color: var(--muted2); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px; }
+    .sidebar nav a {
+      display: block; padding: 8px 12px; border-radius: 8px;
+      text-decoration: none; color: var(--muted); font-size: 0.82rem;
+      transition: all .2s; border-left: 2px solid transparent; margin-bottom: 2px;
+    }
+    .sidebar nav a:hover { color: var(--text); background: var(--bg3); border-left-color: var(--accent2); }
+
+    .content section { margin-bottom: 52px; scroll-margin-top: 80px; }
+    .content h2 {
+      font-size: 1.3rem; font-weight: 700; color: var(--text); margin-bottom: 16px;
+      padding-bottom: 10px; border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .content h2 .sec-num {
+      width: 28px; height: 28px; border-radius: 6px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; font-weight: 800; color: white; flex-shrink: 0;
+    }
+    .content h3 { font-size: 1rem; font-weight: 600; color: var(--text); margin: 20px 0 8px; }
+    .content p { color: var(--muted); font-size: 0.92rem; margin-bottom: 12px; }
+    .content ul { margin: 8px 0 12px 20px; }
+    .content ul li { color: var(--muted); font-size: 0.92rem; margin-bottom: 6px; }
+    .content strong { color: var(--text); }
+
+    .info-card {
+      background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 20px 24px; margin: 16px 0;
+    }
+    .info-card.highlight { border-color: var(--accent2); background: rgba(124,58,237,0.08); }
+    .info-card .ic-title { font-size: 0.8rem; font-weight: 700; color: var(--accent2); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.875rem; }
+    th { background: var(--bg3); color: var(--muted); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); }
+    td { padding: 10px 14px; color: var(--muted); border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    td:first-child { color: var(--text); font-weight: 500; }
+
+    .contact-box {
+      background: linear-gradient(135deg, rgba(124,58,237,0.12), rgba(168,85,247,0.06));
+      border: 1px solid var(--border); border-radius: var(--radius); padding: 28px;
+    }
+    .contact-box a { color: var(--accent2); text-decoration: none; }
+    .contact-box a:hover { text-decoration: underline; }
+
+    footer {
+      background: var(--bg2); border-top: 1px solid var(--border);
+      padding: 32px clamp(16px,5vw,80px);
+      display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center;
+    }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
+    .footer-links a { text-decoration: none; color: var(--muted); font-size: 0.85rem; transition: color .2s; }
+    .footer-links a:hover { color: var(--accent2); }
+    .footer-copy { font-size: 0.78rem; color: var(--muted2); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html"><div class="logo-icon">🏭</div> Faceless Factory</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="privacy.html" class="active">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+  </div>
+</nav>
+
+<div class="hero-banner">
+  <div class="label">Legal</div>
+  <h1>Privacy Policy</h1>
+  <p>We are committed to protecting your privacy. This policy explains what data we collect, how we use it, and your rights as a user of Faceless Factory.</p>
+  <div class="effective-date">📅 Effective Date: January 1, 2025 &nbsp;|&nbsp; Last Updated: May 14, 2025</div>
+</div>
+
+<div class="layout">
+
+  <!-- SIDEBAR TOC -->
+  <aside class="sidebar">
+    <div class="sidebar-title">On this page</div>
+    <nav>
+      <a href="#overview">1. Overview</a>
+      <a href="#information-collected">2. Information We Collect</a>
+      <a href="#how-we-use">3. How We Use Information</a>
+      <a href="#tiktok-data">4. TikTok API Data</a>
+      <a href="#third-parties">5. Third-Party Services</a>
+      <a href="#data-storage">6. Data Storage & Security</a>
+      <a href="#data-sharing">7. Data Sharing</a>
+      <a href="#user-rights">8. Your Rights</a>
+      <a href="#retention">9. Data Retention</a>
+      <a href="#children">10. Children's Privacy</a>
+      <a href="#cookies">11. Cookies</a>
+      <a href="#changes">12. Policy Changes</a>
+      <a href="#contact">13. Contact Us</a>
+    </nav>
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="content">
+
+    <section id="overview">
+      <h2><span class="sec-num">1</span> Overview</h2>
+      <p>Faceless Factory ("we," "our," or "us") operates an automated AI content publishing application ("Application"). This Privacy Policy describes how we collect, use, disclose, and safeguard your information when you use our Application.</p>
+      <p>By using Faceless Factory, you consent to the data practices described in this policy. If you do not agree, please discontinue use of the Application.</p>
+      <div class="info-card highlight">
+        <div class="ic-title">Key Commitment</div>
+        <p style="margin:0;font-size:0.9rem;color:var(--muted)"><strong>We do not sell your personal data.</strong> We do not sell, trade, or rent your personal information to third parties for their marketing purposes.</p>
+      </div>
+    </section>
+
+    <section id="information-collected">
+      <h2><span class="sec-num">2</span> Information We Collect</h2>
+
+      <h3>2.1 Information You Provide Directly</h3>
+      <ul>
+        <li><strong>Account credentials</strong>: Email address when you register</li>
+        <li><strong>Configuration data</strong>: Content niche, posting schedule, platform preferences</li>
+        <li><strong>API keys</strong>: Encrypted credentials for AI services you choose to connect</li>
+      </ul>
+
+      <h3>2.2 Information Collected Through Platform OAuth</h3>
+      <p>When you authorize Faceless Factory to connect to social media platforms (TikTok, YouTube, Instagram, Facebook), we receive:</p>
+      <table>
+        <thead><tr><th>Platform</th><th>Data Received</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>TikTok</td><td>Access token, username, account ID, video upload permission</td><td>Publish videos to your TikTok account</td></tr>
+          <tr><td>YouTube</td><td>OAuth token, channel ID, upload permission</td><td>Upload videos to your YouTube channel</td></tr>
+          <tr><td>Instagram</td><td>Access token, Business Account ID</td><td>Publish Reels to your Instagram</td></tr>
+          <tr><td>Facebook</td><td>Page Access Token, Page ID</td><td>Publish Reels to your Facebook Page</td></tr>
+        </tbody>
+      </table>
+
+      <h3>2.3 Automatically Collected Information</h3>
+      <ul>
+        <li><strong>Usage logs</strong>: Actions taken within the Application (video created, published, failed)</li>
+        <li><strong>Performance data</strong>: Video analytics (views, likes, CTR) fetched from platform APIs</li>
+        <li><strong>Technical data</strong>: IP address, browser type, operating system (for security purposes)</li>
+        <li><strong>Error logs</strong>: Crash reports and error messages for debugging</li>
+      </ul>
+    </section>
+
+    <section id="how-we-use">
+      <h2><span class="sec-num">3</span> How We Use Your Information</h2>
+      <p>We use collected information for the following purposes:</p>
+      <ul>
+        <li><strong>Service delivery</strong>: Authenticate your accounts and publish content to connected platforms</li>
+        <li><strong>Content generation</strong>: Generate AI scripts and thumbnails based on your niche preferences</li>
+        <li><strong>Scheduling</strong>: Post content at optimal times configured by you</li>
+        <li><strong>Analytics</strong>: Retrieve and display performance metrics from your connected platforms</li>
+        <li><strong>Optimization</strong>: Improve AI-generated content quality based on performance data</li>
+        <li><strong>Security</strong>: Detect and prevent unauthorized access or abuse</li>
+        <li><strong>Communication</strong>: Send operational notifications (publish success/failure, token expiry)</li>
+        <li><strong>Legal compliance</strong>: Comply with applicable laws and platform terms of service</li>
+      </ul>
+      <p>We do <strong>not</strong> use your data for targeted advertising or sell it to data brokers.</p>
+    </section>
+
+    <section id="tiktok-data">
+      <h2><span class="sec-num">4</span> TikTok API Data Usage</h2>
+      <div class="info-card highlight">
+        <div class="ic-title">TikTok Specific Disclosure</div>
+        <p style="margin:0;font-size:0.9rem;color:var(--muted)">This section specifically addresses how we handle data obtained through the TikTok API in compliance with TikTok's Developer Terms of Service.</p>
+      </div>
+      <h3>4.1 Data We Access via TikTok API</h3>
+      <ul>
+        <li><strong>Access tokens</strong>: OAuth tokens used to authenticate API requests on your behalf</li>
+        <li><strong>Basic profile info</strong>: TikTok username and account ID (to identify the publishing account)</li>
+        <li><strong>Video upload permission</strong>: The <code>video.upload</code> and <code>video.publish</code> scopes</li>
+      </ul>
+      <h3>4.2 What We Do NOT Access</h3>
+      <ul>
+        <li>We do not access your TikTok followers list, messages, or personal content</li>
+        <li>We do not read, download, or store your existing TikTok videos</li>
+        <li>We do not access your TikTok payment information</li>
+        <li>We do not access your contact list or device information via TikTok</li>
+      </ul>
+      <h3>4.3 TikTok Data Retention</h3>
+      <p>TikTok access tokens are stored encrypted in our database and are used solely to publish videos on your behalf. Tokens are deleted immediately when you disconnect your TikTok account or delete your Faceless Factory account. We do not retain TikTok data beyond what is necessary to provide the publishing service.</p>
+      <h3>4.4 No Sale or Transfer of TikTok Data</h3>
+      <p>Data obtained through TikTok APIs is <strong>not sold, transferred, or shared</strong> with any third party for any purpose other than facilitating publishing on your TikTok account as authorized by you.</p>
+    </section>
+
+    <section id="third-parties">
+      <h2><span class="sec-num">5</span> Third-Party Services</h2>
+      <p>Faceless Factory integrates with the following third-party services to operate. Each has its own privacy policy:</p>
+      <table>
+        <thead><tr><th>Service</th><th>Purpose</th><th>Data Shared</th></tr></thead>
+        <tbody>
+          <tr><td>Google Gemini API</td><td>AI script generation</td><td>Content topic/niche (no personal data)</td></tr>
+          <tr><td>Pexels API</td><td>Stock footage retrieval</td><td>Search queries (no personal data)</td></tr>
+          <tr><td>FPT.AI / ElevenLabs</td><td>Text-to-speech audio</td><td>Script text (no personal data)</td></tr>
+          <tr><td>Fal.ai</td><td>AI thumbnail generation</td><td>Image generation prompts</td></tr>
+          <tr><td>TikTok API</td><td>Video publishing</td><td>Video file + caption (per your request)</td></tr>
+          <tr><td>YouTube API</td><td>Video publishing</td><td>Video file + metadata (per your request)</td></tr>
+          <tr><td>Meta Graph API</td><td>Instagram/Facebook publishing</td><td>Video file + caption (per your request)</td></tr>
+        </tbody>
+      </table>
+      <p>We do not share your personal information (name, email, IP address) with any of these third-party services unless required for authentication.</p>
+    </section>
+
+    <section id="data-storage">
+      <h2><span class="sec-num">6</span> Data Storage &amp; Security</h2>
+      <h3>6.1 Where Data is Stored</h3>
+      <p>Your data is stored locally on the device running the Faceless Factory application (SQLite database). When using cloud deployment, data resides on your chosen hosting provider's servers.</p>
+      <h3>6.2 Security Measures</h3>
+      <ul>
+        <li><strong>Encryption at rest</strong>: API keys and OAuth tokens are encrypted before storage</li>
+        <li><strong>Encrypted transmission</strong>: All API communications use HTTPS/TLS</li>
+        <li><strong>Access control</strong>: Application protected by user-configured authentication</li>
+        <li><strong>No cloud storage of video content</strong>: Videos are processed locally and uploaded directly to platforms</li>
+      </ul>
+      <h3>6.3 Security Limitations</h3>
+      <p>No system is 100% secure. We implement industry-standard security measures but cannot guarantee absolute security. In the event of a data breach that may affect your rights, we will notify you as required by applicable law.</p>
+    </section>
+
+    <section id="data-sharing">
+      <h2><span class="sec-num">7</span> Data Sharing &amp; Disclosure</h2>
+      <p>We share your information only in the following limited circumstances:</p>
+      <ul>
+        <li><strong>With platforms you authorize</strong>: Content is published to TikTok, YouTube, Instagram, and Facebook only as directed by you</li>
+        <li><strong>Legal requirements</strong>: If required by law, court order, or government authority</li>
+        <li><strong>Safety</strong>: To prevent fraud, illegal activity, or harm to users</li>
+        <li><strong>Business transfer</strong>: In the event of a merger or acquisition, with prior notice to you</li>
+      </ul>
+      <p><strong>We do not sell, rent, or trade your personal data with third parties for commercial purposes.</strong></p>
+    </section>
+
+    <section id="user-rights">
+      <h2><span class="sec-num">8</span> Your Rights</h2>
+      <p>Depending on your location, you may have the following rights regarding your personal data:</p>
+      <div class="info-card">
+        <div class="ic-title">Your Rights</div>
+        <ul>
+          <li><strong>Right to Access</strong>: Request a copy of the personal data we hold about you</li>
+          <li><strong>Right to Rectification</strong>: Correct inaccurate or incomplete data</li>
+          <li><strong>Right to Erasure</strong>: Request deletion of your personal data ("right to be forgotten")</li>
+          <li><strong>Right to Restrict Processing</strong>: Limit how we process your data</li>
+          <li><strong>Right to Data Portability</strong>: Receive your data in a machine-readable format</li>
+          <li><strong>Right to Object</strong>: Object to processing of your data in certain circumstances</li>
+          <li><strong>Right to Withdraw Consent</strong>: Disconnect platform accounts at any time</li>
+        </ul>
+      </div>
+      <h3>Revoking Platform Access</h3>
+      <p>You can revoke Faceless Factory's access to your social media accounts at any time:</p>
+      <ul>
+        <li><strong>TikTok</strong>: TikTok App → Privacy → Apps and Websites → Faceless Factory → Remove</li>
+        <li><strong>YouTube/Google</strong>: myaccount.google.com → Security → Third-party apps → Revoke</li>
+        <li><strong>Instagram/Facebook</strong>: Settings → Apps and Websites → Faceless Factory → Remove</li>
+      </ul>
+      <p>To exercise any of these rights, contact us at <a href="mailto:privacy@faceless-factory.app" style="color:var(--accent2)">privacy@faceless-factory.app</a>.</p>
+    </section>
+
+    <section id="retention">
+      <h2><span class="sec-num">9</span> Data Retention</h2>
+      <table>
+        <thead><tr><th>Data Type</th><th>Retention Period</th></tr></thead>
+        <tbody>
+          <tr><td>OAuth access tokens (TikTok, YouTube, etc.)</td><td>Until account disconnected or app deleted</td></tr>
+          <tr><td>Video metadata (title, status, analytics)</td><td>Until you delete the record or your account</td></tr>
+          <tr><td>Generated video files</td><td>30 days after creation (auto-cleaned)</td></tr>
+          <tr><td>Application logs</td><td>7 days rolling (auto-purged)</td></tr>
+          <tr><td>Account information</td><td>Until account deletion, then 30 days</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="children">
+      <h2><span class="sec-num">10</span> Children's Privacy</h2>
+      <p>Faceless Factory is not directed at children under the age of 13 (or 16 in the EU). We do not knowingly collect personal information from children. If you believe we have inadvertently collected information from a child, please contact us immediately and we will delete such information promptly.</p>
+    </section>
+
+    <section id="cookies">
+      <h2><span class="sec-num">11</span> Cookies &amp; Tracking</h2>
+      <p>The Faceless Factory web dashboard may use session cookies for authentication and to maintain your logged-in state. We do not use tracking cookies, advertising cookies, or third-party analytics cookies. You can disable cookies in your browser settings, though this may affect application functionality.</p>
+    </section>
+
+    <section id="changes">
+      <h2><span class="sec-num">12</span> Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. When we make material changes, we will update the "Last Updated" date at the top of this page and notify users through the application. Your continued use of Faceless Factory after changes become effective constitutes acceptance of the revised policy.</p>
+    </section>
+
+    <section id="contact">
+      <h2><span class="sec-num">13</span> Contact Us</h2>
+      <p>If you have questions, concerns, or requests regarding this Privacy Policy or your personal data, please contact us:</p>
+      <div class="contact-box">
+        <p><strong>Faceless Factory</strong></p>
+        <p style="margin-top:12px">📧 Email: <a href="mailto:privacy@faceless-factory.app">privacy@faceless-factory.app</a></p>
+        <p>📧 Support: <a href="mailto:support@faceless-factory.app">support@faceless-factory.app</a></p>
+        <p style="margin-top:16px;font-size:0.85rem;color:var(--muted2)">We aim to respond to all privacy-related inquiries within 30 business days.</p>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+    <a href="mailto:support@faceless-factory.app">Contact</a>
+  </div>
+  <p class="footer-copy">© 2024 Faceless Factory. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
